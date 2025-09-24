@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GardenDetail"
+    android:background="@color/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Tên vườn -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Tên Vườn"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/textPrimary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_OnlineStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Đang tải...."
+                    android:textColor="@color/textPrimary" />
+            </LinearLayout>
+
+            <!-- Khung thông số -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cad_SensorsValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:padding="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/cardBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:text="Thông số môi trường"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Nhiệt độ -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/temp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Nhiệt độ vườn"
+                                android:textColor="@color/textPrimary" />
+
+                            <TextView
+                                android:id="@+id/txt_Temp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:text="-- °C"
+                                android:textAlignment="textEnd"
+                                android:textSize="20sp"
+                                android:textColor="@color/textPrimary" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Độ ẩm -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/humi" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Độ ẩm không khí"
+                                android:textColor="@color/textPrimary" />
+
+                            <TextView
+                                android:id="@+id/txt_Humi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:text="-- %"
+                                android:textAlignment="textEnd"
+                                android:textSize="20sp"
+                                android:textColor="@color/textPrimary" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Độ ẩm đất -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/soil" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Độ ẩm đất"
+                                android:textColor="@color/textPrimary" />
+
+                            <TextView
+                                android:id="@+id/txt_Soil"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:text="-- %"
+                                android:textAlignment="textEnd"
+                                android:textSize="20sp"
+                                android:textColor="@color/textPrimary" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Ánh sáng -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/light" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView8"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Độ sáng"
+                                android:textColor="@color/textPrimary" />
+
+                            <TextView
+                                android:id="@+id/txt_Light"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:text="-- %"
+                                android:textAlignment="textEnd"
+                                android:textSize="20sp"
+                                android:textColor="@color/textPrimary" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Khung Auto -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cad_SwAuto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/cardBackground">
+
+                <Switch
+                    android:id="@+id/sw_AutoMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chế độ Auto"
+                    android:textSize="18sp"
+                    android:textColor="@color/textPrimary" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Khung thiết bị -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cad_SwDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/cardBackground">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
+                    android:columnCount="2"
+                    android:rowCount="2"
+                    android:rowOrderPreserved="false"
+                    android:useDefaultMargins="true">
+
+                    <Switch
+                        android:id="@+id/sw_Bom"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:text="Máy bơm"
+                        android:textSize="16sp"
+                        android:textColor="@color/textPrimary" />
+
+                    <Switch
+                        android:id="@+id/sw_Den"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:text="Đèn"
+                        android:textSize="16sp"
+                        android:textColor="@color/textPrimary" />
+
+                    <Switch
+                        android:id="@+id/sw_Quat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:text="Quạt"
+                        android:textSize="16sp"
+                        android:textColor="@color/textPrimary" />
+
+                    <Switch
+                        android:id="@+id/sw_Suong"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:text="Phun sương"
+                        android:textSize="16sp"
+                        android:textColor="@color/textPrimary" />
+                </GridLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card cấu hình -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cad_Config"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="@color/cardBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:text="Cấu hình đã thiết lập"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Nhiệt độ -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nhiệt độ (Quạt)"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/txt_LimitTemp1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ngưỡng BẬT: &gt;= ..."
+                            android:textColor="@color/textPrimary" />
+
+                        <TextView
+                            android:id="@+id/txt_LimitTemp2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ngưỡng TẮT: &lt;= ..."
+                            android:textColor="@color/textPrimary" />
+                    </LinearLayout>
+
+                    <!-- Độ ẩm không khí -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:text="Độ ẩm không khí (Sương)"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/txt_LimitHumi1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ngưỡng BẬT: &lt;= ..."
+                            android:textColor="@color/textPrimary" />
+
+                        <TextView
+                            android:id="@+id/txt_LimitHumi2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ngưỡng TẮT: &gt;= ..."
+                            android:textColor="@color/textPrimary" />
+                    </LinearLayout>
+
+                    <!-- Độ ẩm đất -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:text="Độ sáng (Đèn)"
+                        android:textColor="@color/textPrimary"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/txt_LimitLight1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ngưỡng BẬT: &lt;= ..."
+                            android:textColor="@color/textPrimary" />
+
+                        <TextView
+                            android:id="@+id/txt_LimitLight2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ngưỡng TẮT: &gt;= ..."
+                            android:textColor="@color/textPrimary" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:text="Độ ẩm đất (Bơm)"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/txt_LimitSoil1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ngưỡng BẬT: &lt;= ..."
+                            android:textColor="@color/textPrimary" />
+
+                        <TextView
+                            android:id="@+id/txt_LimitSoil2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ngưỡng TẮT: &gt;= ..."
+                            android:textColor="@color/textPrimary" />
+                    </LinearLayout>
+
+                    <!-- Ánh sáng -->
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Nút Xoá -->
+            <Button
+                android:id="@+id/btn_DeleteGarden"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/deleteButton"
+                android:text="Xoá Vườn"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- FloatingActionButton -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_settingRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:backgroundTint="@color/fabColor"
+        app:srcCompat="@android:drawable/ic_menu_manage"
+        android:contentDescription="fab" />
+
+</FrameLayout>

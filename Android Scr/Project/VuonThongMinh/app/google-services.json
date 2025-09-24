@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "276711034308",
+    "firebase_url": "https://vuonthongminh-29205-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "vuonthongminh-29205",
+    "storage_bucket": "vuonthongminh-29205.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276711034308:android:69ca5d9571922692e76891",
+        "android_client_info": {
+          "package_name": "com.DATN.vuonthongminh"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFlTGXAJh4RfteLV_yy9XqcKSyQDgMz38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
